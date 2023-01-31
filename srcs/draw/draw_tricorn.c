@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:27:21 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/30 17:39:16 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/01/31 15:51:19 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -51,6 +51,8 @@ void	draw_tricorn(t_mlx *mlx, int x, int y)
 	t_complex	c;
 	t_complex	z;
 
+	z.real = 0;
+	z.imag = 0;
 	while (y < DISPLAY_WIDTH)
 	{
 		c.imag = (mlx->viewport.center.imag + mlx->viewport.border.imag)

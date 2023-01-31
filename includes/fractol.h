@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:52:51 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/31 01:48:54 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/01/31 15:53:33 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FRACTOL_H
@@ -78,8 +78,6 @@ int				ft_tolower(int c);
 void			usage_indications(void);
 
 /* Hooks */
-
-void			test_keycode(t_mlx *mlx);
 
 void			set_hooks(t_mlx	*mlx);
 void			select_fractal(t_mlx *mlx, enum e_fractals target);

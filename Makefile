@@ -6,7 +6,7 @@
 #    By: nicolas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 16:37:58 by nicolas           #+#    #+#              #
-#    Updated: 2023/01/31 00:39:13 by nicolas          ###   ########.fr        #
+#    Updated: 2023/01/31 15:53:41 by nicolas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,6 @@ SRCS				:=		fract-ol \
 							utils/ft_str_is_nbr \
 							utils/ft_strcmp \
 							utils/usage_indications \
-							hooks/test_keycode \
 							hooks/set_hooks \
 							hooks/hook_numbers \
 							hooks/hook_arrows \
@@ -63,7 +62,7 @@ CC_SRCS_C			:=		$(addsuffix $(SRC_DIR)/, $(SRCS_C))
 OBJS				:=		$(SRCS_C:%.c=$(OBJ_DIR)/%.o)
 
 MLX_OBJ				:=		-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
-MLX_LINK			:=		-I/usr/include -Imlx_linux #-O3
+MLX_LINK			:=		-I/usr/include -Imlx_linux -O3
 
 #------------------------------------------------#
 #   COMMANDS                                     #
@@ -72,7 +71,7 @@ MLX_LINK			:=		-I/usr/include -Imlx_linux #-O3
 CC					:=		gcc
 AR					:=		ar -rcs
 INCS				:=		-I $(INC_DIR)
-CFLAGS				:=		-Wall -Wextra -Werror -g
+CFLAGS				:=		-Wall -Wextra -Werror
 RM					:=		rm -f
 
 #------------------------------------------------#
