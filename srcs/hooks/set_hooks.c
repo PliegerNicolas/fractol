@@ -6,7 +6,7 @@
 /*   By: nplieger <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:45:39 by nplieger          #+#    #+#             */
-/*   Updated: 2023/01/31 01:48:30 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/01/31 15:23:31 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -52,7 +52,7 @@ void	set_hooks(t_mlx	*mlx)
 	if (!mlx)
 		return ;
 	mlx_hook(mlx->win_ptr, BUTTON_PRESS_AND_MOUSE, 1L << 2, hook_mouse, mlx);
-	mlx_hook(mlx->win_ptr, MOUSE_MOTION_NOTIFY, 1L << 6, cursor_move, mlx);
 	mlx_hook(mlx->win_ptr, KEY_PRESS, 1L << 0, set_key_hooks, mlx);
+	mlx_hook(mlx->win_ptr, MOUSE_MOTION_NOTIFY, 1L << 6, cursor_move, mlx);
 	mlx_hook(mlx->win_ptr, X, 1L << 17, mlx_exit, mlx);
 }
