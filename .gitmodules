@@ -1,0 +1,6 @@
+[submodule "minilibx-linux"]
+	path = minilibx-linux
+	url = git@github.com:42Paris/minilibx-linux.git
+[submodule "mlx_linux"]
+	path = mlx_linux
+	url = git@github.com:42Paris/minilibx-linux.git
