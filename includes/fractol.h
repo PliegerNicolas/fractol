@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:52:51 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/31 15:53:33 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/01/31 18:07:34 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FRACTOL_H
@@ -39,9 +39,9 @@ typedef int	t_bool;
 /* * COLORS								* */
 /* ************************************** */
 
-# define RED "\033[0;31m"
-# define GREEN "\033[0;32m"
-# define CYAN "\033[0;36m"
+# define RED "\033[1;31m"
+# define GREEN "\033[1;32m"
+# define CYAN "\033[1;36m"
 
 /* ************************************** */
 /* * FUNCTIONS							* */
@@ -63,9 +63,7 @@ int				ft_putstr_fd(char *s, int fd);
 int				ft_putendl_fd(char *s, int fd);
 int				ft_putnbr_fd(int n, int fd);
 
-void			set_write_color_red(int fd);
-void			set_write_color_green(int fd);
-void			set_write_color_cyan(int fd);
+void			set_write_color(char *s, int fd);
 void			reset_write_color(int fd);
 
 long long int	ft_atolli(const char *nptr);

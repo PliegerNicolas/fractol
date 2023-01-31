@@ -6,20 +6,20 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 02:25:38 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/31 15:33:28 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/01/31 18:07:16 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
 
 void	usage_indications(void)
 {
-	set_write_color_cyan(1);
+	set_write_color(CYAN, 1);
 	put_available_fractals(1);
 	ft_putchar_fd('\n', 1);
-	set_write_color_green(1);
+	set_write_color(GREEN, 1);
 	ft_putendl_fd("Controls :", 1);
 	ft_putendl_fd("== == == == == == == == == ==", 1);
-	set_write_color_cyan(1);
+	set_write_color(CYAN, 1);
 	ft_putchar_fd('\n', 1);
 	ft_putendl_fd("॰ Select fractal by index : '1', '2', '3', '4', ...", 1);
 	ft_putendl_fd("॰ Modify precision : 'q' & 'w'.", 1);
@@ -29,7 +29,7 @@ void	usage_indications(void)
 	ft_putchar_fd('\n', 1);
 	ft_putendl_fd("॰ With Julia (2) : cursor position is a factor.", 1);
 	ft_putchar_fd('\n', 1);
-	set_write_color_green(1);
+	set_write_color(GREEN, 1);
 	ft_putendl_fd("== == == == == == == == == ==", 1);
 	reset_write_color(1);
 }
