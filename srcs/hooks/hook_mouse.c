@@ -6,17 +6,19 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:55:21 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/31 15:30:30 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/01/31 15:45:12 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
 #define SCROLL_UP 4
 #define SCROLL_DOWN 5
 
+#include <stdio.h>
 int	cursor_move(int x, int y, t_mlx *mlx)
 {
 	(void)x;
 	(void)y;
+	printf("a");
 	if (mlx->vars.selected_fractal == julia)
 		fill_display(mlx);
 	return (0);
