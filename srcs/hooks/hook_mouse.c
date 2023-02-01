@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:55:21 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/31 15:51:55 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/02/01 13:03:52 by nicolas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -22,25 +22,32 @@ int	cursor_move(int x, int y, t_mlx *mlx)
 	return (0);
 }
 
-static void	mlx_zoom(int keycode, t_viewport *viewport, double x, double y)
+void	mlx_zoom(int keycode, t_viewport *viewport, double x, double y)
 {
+	t_complex	old;
+
 	if (keycode == SCROLL_UP)
 	{
+		old.real = ((x * viewport->step.real) - viewport->border.real);
+		old.imag = ((y * viewport->step.imag) - viewport->border.imag);
 		viewport->zoom *= 0.95;
+		set_zoom(viewport);
 		x = ((x * viewport->step.real) - viewport->border.real);
 		y = ((y * viewport->step.imag) - viewport->border.imag);
-		viewport->center.real += (x * viewport->zoom_elasticity);
-		viewport->center.imag -= (y * viewport->zoom_elasticity);
+		viewport->center.real += old.real - x;
+		viewport->center.imag -= old.imag - y;
 	}
-	else
+	else if (keycode == SCROLL_DOWN)
 	{
+		old.real = ((x * viewport->step.real) - viewport->border.real);
+		old.imag = ((y * viewport->step.imag) - viewport->border.imag);
 		viewport->zoom *= 1.05;
+		set_zoom(viewport);
 		x = ((x * viewport->step.real) - viewport->border.real);
 		y = ((y * viewport->step.imag) - viewport->border.imag);
-		viewport->center.real -= (x * viewport->zoom_elasticity);
-		viewport->center.imag += (y * viewport->zoom_elasticity);
+		viewport->center.real += old.real - x;
+		viewport->center.imag -= old.imag - y;
 	}
-	set_zoom(viewport);
 }
 
 int	hook_mouse(int keycode, int x, int y, t_mlx *mlx)
