@@ -6,7 +6,7 @@
 #    By: nicolas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 16:37:58 by nicolas           #+#    #+#              #
-#    Updated: 2023/02/01 13:09:48 by nicolas          ###   ########.fr        #
+#    Updated: 2023/02/02 13:58:47 by nplieger         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,10 @@ COLOR_END=\033[0m
 #   RECIPES                                      #
 #------------------------------------------------#
 
-all:				$(NAME)
+all:				configure_mlx $(NAME)
+
+configure_mlx:
+	make -C $(MLX_DIR)
 
 $(NAME):			$(OBJS)
 	$(AR) $(NAME) $(OBJS)
@@ -101,10 +104,11 @@ clean:
 	$(RM) -r $(OBJ_DIR)
 
 fclean:				clean
+	make clean -C $(MLX_DIR)
 	$(RM) $(NAME)
 	$(RM) $(EXEC)
 
 re:					fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re configure_mlx
 
