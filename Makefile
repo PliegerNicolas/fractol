@@ -6,7 +6,7 @@
 #    By: nicolas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 16:37:58 by nicolas           #+#    #+#              #
-#    Updated: 2023/02/08 15:33:12 by nplieger         ###   ########.fr        #
+#    Updated: 2023/02/08 16:25:16 by nplieger         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ MLX_DIR				:=		mlx_linux
 SRCS				:=		fract-ol \
 							args_verification/verify_args \
 							args_verification/error_messages \
+							args_verification/error_messages2 \
 							utils/set_write_color \
 							utils/fractals \
 							utils/ft_putchar_fd \

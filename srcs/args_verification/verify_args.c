@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:44:08 by nicolas           #+#    #+#             */
-/*   Updated: 2023/02/08 16:18:25 by nplieger         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:26:44 by nplieger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -44,7 +44,7 @@ static t_bool	handle_julia_args(int argc, char **argv,
 	if (argc != 3)
 		return (error_wrong_number_of_given_args(target));
 	if (!ft_str_is_double(argv[1]) || !ft_str_is_double(argv[2]))
-		return (FALSE);
+		return (error_invalid_argument_given());
 	julia_arg->real = ft_atold(argv[1]);
 	julia_arg->imag = ft_atold(argv[2]);
 	return (TRUE);

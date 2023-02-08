@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:52:51 by nicolas           #+#    #+#             */
-/*   Updated: 2023/02/08 16:10:17 by nplieger         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:25:03 by nplieger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FRACTOL_H
@@ -55,6 +55,7 @@ t_bool			error_no_given_arg(void);
 t_bool			error_wrong_number_of_given_args(enum e_fractals *target);
 t_bool			error_indication(void);
 t_bool			error_unrecognized_fractal_name(void);
+t_bool			error_invalid_argument_given(void);
 t_bool			check_if_valid_int(long long int llint);
 
 /* Utils */
