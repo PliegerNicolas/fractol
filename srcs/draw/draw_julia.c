@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:16:36 by nicolas           #+#    #+#             */
-/*   Updated: 2023/02/08 11:33:15 by nplieger         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:19:41 by nplieger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -51,11 +51,6 @@ void	draw_julia(t_mlx *mlx, int x, int y)
 	t_complex	c;
 	t_complex	z;
 
-	//mlx_mouse_get_pos(mlx->mlx_ptr, mlx->win_ptr, &cursor.x, &cursor.y);
-	//c.real = (mlx->viewport.center.real - mlx->viewport.border.real)
-	//	+ (mlx->viewport.step.real * (double)mlx->vars.cursor_pos.x);
-	//c.imag = (mlx->viewport.center.imag + mlx->viewport.border.imag)
-	//	- (mlx->viewport.step.imag * (double)mlx->vars.cursor_pos.y);
 	c.real = mlx->vars.cursor_pos.real;
 	c.imag = mlx->vars.cursor_pos.imag;
 	while (y < DISPLAY_WIDTH)
