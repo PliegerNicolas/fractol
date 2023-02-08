@@ -6,7 +6,7 @@
 #    By: nicolas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 16:37:58 by nicolas           #+#    #+#              #
-#    Updated: 2023/02/08 11:06:01 by nplieger         ###   ########.fr        #
+#    Updated: 2023/02/08 11:13:39 by nplieger         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,9 +89,6 @@ COLOR_END=\033[0m
 
 all:				configure_mlx $(NAME)
 
-configure_mlx:
-	make -C $(MLX_DIR)
-
 $(NAME):			$(OBJS)
 	$(AR) $(NAME) $(OBJS)
 	$(CC) $(CFLAGS) $(NAME) $(MLX_OBJ) -o $(EXEC)
@@ -99,6 +96,14 @@ $(NAME):			$(OBJS)
 $(OBJS):			$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(@D)
 	$(CC) $(CFLAGS) $(INCS) $(MLX_LINK) -c $< -o $@
+
+check_and_reinit_submodules:
+	@if git submodule status | egrep -q '^[-]|^[+]' ; then \
+		git submodule update --init; \
+	fi
+
+configure_mlx:	check_and_reinit_submodules
+	make -C $(MLX_DIR)
 
 clean:
 	$(RM) -r $(OBJ_DIR)
@@ -114,5 +119,5 @@ fclean:				clean
 
 re:					fclean all
 
-.PHONY: all clean fclean re configure_mlx
+.PHONY: all clean fclean re configure_mlx check_and_reinit_submodules
 
