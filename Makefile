@@ -6,7 +6,7 @@
 #    By: nicolas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 16:37:58 by nicolas           #+#    #+#              #
-#    Updated: 2023/02/02 13:58:47 by nplieger         ###   ########.fr        #
+#    Updated: 2023/02/08 11:06:01 by nplieger         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,8 +103,12 @@ $(OBJS):			$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 clean:
 	$(RM) -r $(OBJ_DIR)
 
+FILE=/$(MLX_DIR)/Makefile.gen
+
 fclean:				clean
-	make clean -C $(MLX_DIR)
+	@if [ -f $(MLX_DIR)/Makefile.gen ] ; then \
+		make clean -C $(MLX_DIR) ; \
+	fi
 	$(RM) $(NAME)
 	$(RM) $(EXEC)
 
