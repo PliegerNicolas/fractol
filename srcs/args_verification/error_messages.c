@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:10:59 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/31 18:06:49 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/02/08 16:10:41 by nplieger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -20,10 +20,8 @@ t_bool	error_indication(void)
 	return (FALSE);
 }
 
-t_bool	error_no_given_arg(int argc)
+t_bool	error_no_given_arg(void)
 {
-	if (argc != 0)
-		return (FALSE);
 	set_write_color(RED, 2);
 	ft_putendl_fd("Error. No argument given.", 2);
 	error_indication();
@@ -31,26 +29,24 @@ t_bool	error_no_given_arg(int argc)
 	return (FALSE);
 }
 
-t_bool	error_excess_given_args(int argc)
+t_bool	error_wrong_number_of_given_args(enum e_fractals *target)
 {
-	if (argc < 2)
-		return (FALSE);
 	set_write_color(RED, 2);
-	ft_putendl_fd("Error. More than one argument given.", 2);
+	ft_putstr_fd("Error. ", 2);
+	ft_putstr_fd(get_fractal_name_capitalized(*target), 2);
+	ft_putendl_fd(" recognized. Wrong number of arguments given.", 2);
 	error_indication();
 	reset_write_color(2);
 	return (FALSE);
 }
 
-t_bool	error_unrecognized_fractal_name(char *arg)
+t_bool	error_unrecognized_fractal_name(void)
 {
-	if (arg)
-		return (FALSE);
 	set_write_color(RED, 2);
 	ft_putendl_fd("Error. Unrecognized fractal.", 2);
 	error_indication();
 	reset_write_color(2);
-	return (TRUE);
+	return (FALSE);
 }
 
 t_bool	check_if_valid_int(long long int llint)

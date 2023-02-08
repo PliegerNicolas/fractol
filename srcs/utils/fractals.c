@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 14:06:27 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/30 16:26:20 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/02/08 16:20:10 by nplieger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -55,6 +55,9 @@ void	put_available_fractals(int fd)
 		ft_putstr_fd("॰ ", fd);
 		ft_putnbr_fd(i++, fd);
 		ft_putstr_fd(" : ", fd);
-		ft_putendl_fd(fract_name, fd);
+		ft_putstr_fd(fract_name, fd);
+		if (fract_enum == julia)
+			ft_putstr_fd(" (optional arguments -> [real double] [imag double])", fd);
+		ft_putchar_fd('\n', fd);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:52:51 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/31 18:07:34 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/02/08 16:10:17 by nplieger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FRACTOL_H
@@ -49,11 +49,12 @@ typedef int	t_bool;
 
 /* Args verification */
 
-t_bool			verify_args(int argc, char **argv, enum e_fractals *target);
-t_bool			error_no_given_arg(int argc);
-t_bool			error_excess_given_args(int argc);
+t_bool			verify_args(int argc, char **argv, enum e_fractals *target,
+					t_complex *julia_arg);
+t_bool			error_no_given_arg(void);
+t_bool			error_wrong_number_of_given_args(enum e_fractals *target);
 t_bool			error_indication(void);
-t_bool			error_unrecognized_fractal_name(char *arg);
+t_bool			error_unrecognized_fractal_name(void);
 t_bool			check_if_valid_int(long long int llint);
 
 /* Utils */
@@ -67,9 +68,11 @@ void			set_write_color(char *s, int fd);
 void			reset_write_color(int fd);
 
 long long int	ft_atolli(const char *nptr);
+long double		ft_atold(const char *str);
 
 int				ft_strcmp(char *s1, char *s2);
-t_bool			ft_str_is_nbr(char *arg);
+t_bool			ft_str_is_int(char *arg);
+t_bool			ft_str_is_double(char *arg);
 char			*ft_lower_str(char *str);
 int				ft_tolower(int c);
 

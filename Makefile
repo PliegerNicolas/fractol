@@ -6,7 +6,7 @@
 #    By: nicolas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 16:37:58 by nicolas           #+#    #+#              #
-#    Updated: 2023/02/08 11:13:39 by nplieger         ###   ########.fr        #
+#    Updated: 2023/02/08 15:33:12 by nplieger         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS				:=		fract-ol \
 							utils/ft_putendl_fd \
 							utils/ft_putnbr_fd \
 							utils/ft_atolli \
+							utils/ft_atold \
 							utils/ft_tolower \
 							utils/ft_lower_str \
 							utils/ft_str_is_nbr \
@@ -71,7 +72,7 @@ MLX_LINK			:=		-I/usr/include -Imlx_linux -O3
 CC					:=		gcc
 AR					:=		ar -rcs
 INCS				:=		-I $(INC_DIR)
-CFLAGS				:=		-Wall -Wextra -Werror -O3
+CFLAGS				:=		-Wall -Wextra -Werror -g #-O3
 RM					:=		rm -f
 
 #------------------------------------------------#
