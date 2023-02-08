@@ -6,7 +6,7 @@
 #    By: nicolas <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/15 16:37:58 by nicolas           #+#    #+#              #
-#    Updated: 2023/02/08 16:25:16 by nplieger         ###   ########.fr        #
+#    Updated: 2023/02/08 16:27:52 by nplieger         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ MLX_LINK			:=		-I/usr/include -Imlx_linux -O3
 CC					:=		gcc
 AR					:=		ar -rcs
 INCS				:=		-I $(INC_DIR)
-CFLAGS				:=		-Wall -Wextra -Werror -g #-O3
+CFLAGS				:=		-Wall -Wextra -Werror -O3
 RM					:=		rm -f
 
 #------------------------------------------------#
