@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:55:21 by nicolas           #+#    #+#             */
-/*   Updated: 2023/02/01 13:03:52 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/02/08 13:09:35 by nplieger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -15,10 +15,16 @@
 
 int	cursor_move(int x, int y, t_mlx *mlx)
 {
-	(void)x;
-	(void)y;
 	if (mlx->vars.selected_fractal == julia)
+	{
+		mlx->vars.cursor_pos.real = (mlx->viewport.center.real
+				- mlx->viewport.border.real)
+			+ (mlx->viewport.step.real * (double)x);
+		mlx->vars.cursor_pos.imag = (mlx->viewport.center.imag
+				+ mlx->viewport.border.imag)
+			- (mlx->viewport.step.imag * (double)y);
 		fill_display(mlx);
+	}
 	return (0);
 }
 

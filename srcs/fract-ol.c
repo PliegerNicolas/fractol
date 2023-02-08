@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 16:41:23 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/28 18:54:52 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/02/08 13:02:20 by nplieger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "fractol.h"
@@ -17,8 +17,8 @@ static void	initialize_mlx(t_mlx *mlx)
 	mlx->win_ptr = mlx_new_window(mlx->mlx_ptr, DISPLAY_LENGTH, DISPLAY_WIDTH,
 			TITLE);
 	mlx->vars.img = NULL;
-	mlx->vars.cursor_pos.x = 0;
-	mlx->vars.cursor_pos.y = 0;
+	mlx->vars.cursor_pos.real = 0;
+	mlx->vars.cursor_pos.imag = 0;
 }
 
 int	main(int argc, char **argv)

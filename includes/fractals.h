@@ -6,7 +6,7 @@
 /*   By: nicolas <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:46:05 by nicolas           #+#    #+#             */
-/*   Updated: 2023/01/31 01:47:07 by nicolas          ###   ########.fr       */
+/*   Updated: 2023/02/08 13:02:03 by nplieger         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FRACTALS_H
@@ -51,15 +51,8 @@ typedef struct s_trgb
 	float	red_phase;
 	float	green_phase;
 	float	blue_phase;
-	float	shift;	
+	float	shift;
 }	t_trgb;
-
-/* Cursor position */
-typedef struct s_cursor
-{
-	int		x;
-	int		y;
-}	t_cursor;
 
 /* Data structure to hold imaginary number */
 typedef struct s_complex
@@ -75,7 +68,7 @@ typedef struct s_vars
 	void				*img;
 	int					max_iterations;
 	t_trgb				color;
-	t_cursor			cursor_pos;
+	t_complex			cursor_pos;
 	char				*addr;
 	int					bits_per_pixel;
 	int					line_length;
