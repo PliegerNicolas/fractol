@@ -6,16 +6,16 @@ A 42 school project. Draw fractals on a display via a single threaded program. U
 
 ## Run Locally
 
-Clone the project
-
-```bash
-  git clone git@github.com:PliegerNicolas/fractol.git
-```
-
 Install MiniLibx dependencies.
 
 ```bash
   sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev libbsd-dev
+```
+
+Clone the project
+
+```bash
+  git clone git@github.com:PliegerNicolas/fractol.git
 ```
 
 Compilation
