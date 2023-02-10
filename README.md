@@ -18,7 +18,7 @@ Clone the project
   git clone git@github.com:PliegerNicolas/fractol.git
 ```
 
-Compilation
+Usage
 
 ```bash
     cd fractol
